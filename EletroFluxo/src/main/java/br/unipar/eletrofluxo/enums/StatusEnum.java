@@ -9,6 +9,7 @@ package br.unipar.eletrofluxo.enums;
  * @author Usuario
  */
 public enum StatusEnum {
-    Ativo,
-    Inativo
+    ABERTURA,
+    EM_ANDAMENTO,
+    CONCLUIDA
 }
