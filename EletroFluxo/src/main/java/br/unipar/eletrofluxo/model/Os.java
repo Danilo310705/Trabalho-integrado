@@ -13,12 +13,12 @@ import java.util.Date;
  * @author Usuario
  */
 public class Os {
-    private String descricao;
-    private StatusEnum status;
+    private Cliente cliente;
     private Date dataAbertura;
     private Date dataTermino;
-    private Cliente cliente;
-    private ArrayList<Produto> produtos;
+    private StatusEnum status;
+    private String descricao;
+    private ArrayList<ProdutoOs> produtos;
 
     public String getDescricao() {
         return descricao;
@@ -60,16 +60,17 @@ public class Os {
         this.cliente = cliente;
     }
 
-    public ArrayList<Produto> getProdutos() {
+    public ArrayList<ProdutoOs> getProdutos() {
         return produtos;
     }
 
-    public void setProdutos(ArrayList<Produto> produtos) {
+    public void setProdutos(ArrayList<ProdutoOs> produtos) {
         this.produtos = produtos;
     }
     
-    public void addProdutos(Produto produto){
+    public void addProdutos(ProdutoOs produto){
         produtos.add(produto);
     }
+
     
 }

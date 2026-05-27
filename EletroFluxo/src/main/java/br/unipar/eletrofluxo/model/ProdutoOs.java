@@ -11,6 +11,8 @@ package br.unipar.eletrofluxo.model;
 public class ProdutoOs {
     private Produto produtoOs;
     private Integer quantidade;
+    private Double subTotal;
+    
     
     public Produto getProdutoOs() {
         return produtoOs;
@@ -29,6 +31,14 @@ public class ProdutoOs {
     }
     
     public Double getSubTotal(){
-        return = quantidade * produto.setPrecoUnitario();
+        return subTotal = quantidade * produtoOs.getPrecoUnitario();
     }
+
+    @Override
+    public String toString() {
+        return "ProdutoOs{" + "produtoOs=" + produtoOs.getNome() + ", quantidade=" + quantidade + ", subTotal=" + subTotal + "}\n";
+    }
+
+    
+    
 }

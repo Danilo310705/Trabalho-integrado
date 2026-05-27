@@ -9,8 +9,8 @@ import br.unipar.eletrofluxo.model.ClienteFisico;
 import br.unipar.eletrofluxo.model.ClienteJuridico;
 import br.unipar.eletrofluxo.model.Os;
 import br.unipar.eletrofluxo.model.Produto;
+import br.unipar.eletrofluxo.model.ProdutoOs;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -19,6 +19,8 @@ import java.util.Date;
 public class EletroFluxo {
 
     public static void main(String[] args) {
+        
+        //PRODUTOS NO ESTOQUE
         
         Produto parafuso = new Produto();
         parafuso.setNome("Parafuso");
@@ -48,6 +50,9 @@ public class EletroFluxo {
         clipe.setPrecoUnitario(0.75);
         clipe.setQuantidade(150);  
         
+        
+        //CLIENTES
+        
         ClienteFisico cliente1 = new ClienteFisico();
         cliente1.setNome("Ricardo");
         cliente1.setCpf("120.324.956-78");
@@ -67,27 +72,36 @@ public class EletroFluxo {
         cliente2.setTelefone("1903824756");
         cliente2.setObservacoes("so a vista");
         
+        //PRODUTOS QUE VAO NA ORDEM DE SERVIÇO COM A LISTA
+        
+        ProdutoOs parafusoOs1 = new ProdutoOs();
+        parafusoOs1.setProdutoOs(parafuso);
+        parafusoOs1.setQuantidade(10);
+        parafusoOs1.getSubTotal();
+        
+        ProdutoOs porcaOs1 = new ProdutoOs();
+        porcaOs1.setProdutoOs(porca);
+        porcaOs1.setQuantidade(10);
+        porcaOs1.getSubTotal();
         
         
-        
-        
-        
-        
-        
-        
-        ArrayList<Produto> produtosOs = new ArrayList<>();
+        ArrayList<ProdutoOs> produtosOs1 = new ArrayList<>();
+        produtosOs1.add(parafusoOs1);
+        produtosOs1.add(porcaOs1);
         
         Os servico1 = new Os();
         servico1.setCliente(cliente1);
         servico1.setDataAbertura(null);
         servico1.setDataTermino(null);
-        servico1.setDescricao("Ricardão que que faz a fiação da casa dele");
+        servico1.setDescricao("Ricardão quiqué faze a fiação da casa dele");
         servico1.setStatus(StatusEnum.ABERTURA);
         servico1.setProdutos(/*por enquanto*/ null);
         
-        System.out.println(parafuso);
+        /*System.out.println(parafuso);
         System.out.println(cliente1);
         System.out.println(cliente2);
+        System.out.println(produtosOs1);*/
+        System.out.println(servico1);
         
     }
 }

@@ -1,6 +1,7 @@
 br\unipar\eletrofluxo\EletroFluxo.class
 br\unipar\eletrofluxo\model\ClienteFisico.class
 br\unipar\eletrofluxo\model\Os.class
+br\unipar\eletrofluxo\model\ProdutoOs.class
 br\unipar\eletrofluxo\enums\StatusEnum.class
 br\unipar\eletrofluxo\model\ClienteJuridico.class
 br\unipar\eletrofluxo\model\Cliente.class
