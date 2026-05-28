@@ -8,7 +8,7 @@ package br.unipar.eletrofluxo.enums;
  *
  * @author Usuario
  */
-public enum StatusEnum {
+public enum StatusOsEnum {
     ABERTURA,
     EM_ANDAMENTO,
     CONCLUIDA

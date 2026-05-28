@@ -1,8 +1,12 @@
-C:\Users\danilo310705.ACAD-TOL\Documents\trabalho-triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\EletroFluxo.java
-C:\Users\danilo310705.ACAD-TOL\Documents\trabalho-triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\enums\StatusEnum.java
-C:\Users\danilo310705.ACAD-TOL\Documents\trabalho-triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\model\Cliente.java
-C:\Users\danilo310705.ACAD-TOL\Documents\trabalho-triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\model\ClienteFisico.java
-C:\Users\danilo310705.ACAD-TOL\Documents\trabalho-triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\model\ClienteJuridico.java
-C:\Users\danilo310705.ACAD-TOL\Documents\trabalho-triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\model\Os.java
-C:\Users\danilo310705.ACAD-TOL\Documents\trabalho-triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\model\Produto.java
-C:\Users\danilo310705.ACAD-TOL\Documents\trabalho-triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\model\ProdutoOs.java
+C:\Users\Usuario\Desktop\codigos da univer\trabalho triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\EletroFluxo.java
+C:\Users\Usuario\Desktop\codigos da univer\trabalho triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\enums\StatusClienteEnum.java
+C:\Users\Usuario\Desktop\codigos da univer\trabalho triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\enums\StatusOsEnum.java
+C:\Users\Usuario\Desktop\codigos da univer\trabalho triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\enums\ZonaEnum.java
+C:\Users\Usuario\Desktop\codigos da univer\trabalho triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\model\Cliente.java
+C:\Users\Usuario\Desktop\codigos da univer\trabalho triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\model\ClienteFisico.java
+C:\Users\Usuario\Desktop\codigos da univer\trabalho triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\model\ClienteJuridico.java
+C:\Users\Usuario\Desktop\codigos da univer\trabalho triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\model\ItemProduto.java
+C:\Users\Usuario\Desktop\codigos da univer\trabalho triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\model\ItemServico.java
+C:\Users\Usuario\Desktop\codigos da univer\trabalho triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\model\Os.java
+C:\Users\Usuario\Desktop\codigos da univer\trabalho triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\model\Produto.java
+C:\Users\Usuario\Desktop\codigos da univer\trabalho triplo\EletroFluxo\src\main\java\br\unipar\eletrofluxo\model\Servico.java

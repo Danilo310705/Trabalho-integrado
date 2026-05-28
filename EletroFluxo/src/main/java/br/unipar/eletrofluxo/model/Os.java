@@ -4,7 +4,8 @@
  */
 package br.unipar.eletrofluxo.model;
 
-import br.unipar.eletrofluxo.enums.StatusEnum;
+import br.unipar.eletrofluxo.enums.StatusOsEnum;
+import br.unipar.eletrofluxo.enums.ZonaEnum;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -16,9 +17,12 @@ public class Os {
     private Cliente cliente;
     private Date dataAbertura;
     private Date dataTermino;
-    private StatusEnum status;
+    private StatusOsEnum status;
     private String descricao;
-    private ArrayList<ProdutoOs> produtos;
+    private ZonaEnum zona;
+    private Double totalProdutos;
+    private ArrayList<ItemProduto> produtos;
+    private ArrayList<ItemServico> servicos;
 
     public String getDescricao() {
         return descricao;
@@ -28,12 +32,20 @@ public class Os {
         this.descricao = descricao;
     }
 
-    public StatusEnum getStatus() {
+    public StatusOsEnum getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(StatusOsEnum status) {
         this.status = status;
+    }
+
+    public ZonaEnum getZona() {
+        return zona;
+    }
+
+    public void setZona(ZonaEnum zona) {
+        this.zona = zona;
     }
 
     public Date getDataAbertura() {
@@ -60,17 +72,51 @@ public class Os {
         this.cliente = cliente;
     }
 
-    public ArrayList<ProdutoOs> getProdutos() {
+    public ArrayList<ItemProduto> getProdutos() {
         return produtos;
     }
 
-    public void setProdutos(ArrayList<ProdutoOs> produtos) {
+    public void setProdutos(ArrayList<ItemProduto> produtos) {
         this.produtos = produtos;
     }
     
-    public void addProdutos(ProdutoOs produto){
+    public void addProdutos(ItemProduto produto){
         produtos.add(produto);
     }
+
+    public ArrayList<ItemServico> getServicos() {
+        return servicos;
+    }
+
+    public void setServicos(ArrayList<ItemServico> servicos) {
+        this.servicos = servicos;
+    }
+    
+    public void addServicos(ItemServico servico){
+        servicos.add(servico);
+    }
+
+    public Double gettotalProdutos() {
+        totalProdutos = 0.0;      
+        for(ItemProduto produto : produtos){
+            totalProdutos += produto.getSubTotal();
+        }
+        return totalProdutos;
+    }
+
+    public void settotalProdutos(Double valorTotal) {
+        this.totalProdutos = valorTotal;
+    }
+    
+    
+
+    @Override
+    public String toString() {
+        return "Os{" + "cliente=" + cliente + "\n dataAbertura=" + dataAbertura + ", dataTermino=" + dataTermino + ", status=" + status + "\n descricao=" + descricao + "\n\n produtos=\n" + produtos + "\n\n servicos=" + servicos + "}\n\n\n sub total: "+ totalProdutos;
+    }
+    
+
+
 
     
 }

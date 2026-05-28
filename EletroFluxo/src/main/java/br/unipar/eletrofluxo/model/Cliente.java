@@ -4,7 +4,8 @@
  */
 package br.unipar.eletrofluxo.model;
 
-import br.unipar.eletrofluxo.enums.StatusEnum;
+import br.unipar.eletrofluxo.enums.StatusClienteEnum;
+import br.unipar.eletrofluxo.enums.StatusOsEnum;
 
 /**
  *
@@ -16,7 +17,7 @@ public abstract class Cliente {
     private String observacoes;
     private String telefone;
     private String email;
-    private StatusEnum status;
+    private StatusClienteEnum status;
 
     public String getNome() {
         return nome;
@@ -58,11 +59,11 @@ public abstract class Cliente {
         this.email = email;
     }
 
-    public StatusEnum getStatus() {
+    public StatusClienteEnum getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(StatusClienteEnum status) {
         this.status = status;
     }
 
