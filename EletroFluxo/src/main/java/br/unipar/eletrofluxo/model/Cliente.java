@@ -5,7 +5,6 @@
 package br.unipar.eletrofluxo.model;
 
 import br.unipar.eletrofluxo.enums.StatusClienteEnum;
-import br.unipar.eletrofluxo.enums.StatusOsEnum;
 
 /**
  *
@@ -13,7 +12,6 @@ import br.unipar.eletrofluxo.enums.StatusOsEnum;
  */
 public abstract class Cliente {
     private String nome;
-    private String endereco;//acho que isso vai virar um array
     private String observacoes;
     private String telefone;
     private String email;
@@ -25,14 +23,6 @@ public abstract class Cliente {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
     }
 
     public String getObservacoes() {
@@ -63,13 +53,13 @@ public abstract class Cliente {
         return status;
     }
 
-    public void setStatus(StatusClienteEnum status) {
+    public void setStatus(StatusClienteEnum statu) {
         this.status = status;
     }
 
     @Override
     public String toString() {
-        return "Cliente{" + "nome=" + nome + ", endereco=" + endereco + ", observacoes=" + observacoes + ", telefone=" + telefone + ", email=" + email + ", status=" + status + '}';
+        return "Cliente{" + "nome=" + nome + ", observacoes=" + observacoes + ", telefone=" + telefone + ", email=" + email + ", status=" + status + '}';
     }
     
     

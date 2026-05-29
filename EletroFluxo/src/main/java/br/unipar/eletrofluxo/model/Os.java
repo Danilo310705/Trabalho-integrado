@@ -15,12 +15,12 @@ import java.util.Date;
  */
 public class Os {
     private Cliente cliente;
+    private String descricao;
+    private StatusOsEnum status;    
     private Date dataAbertura;
     private Date dataTermino;
-    private StatusOsEnum status;
-    private String descricao;
     private ZonaEnum zona;
-    private Double totalProdutos;
+    private Double totalOs;
     private ArrayList<ItemProduto> produtos;
     private ArrayList<ItemServico> servicos;
 
@@ -96,23 +96,27 @@ public class Os {
         servicos.add(servico);
     }
 
-    public Double gettotalProdutos() {
-        totalProdutos = 0.0;      
+    public Double gettotalOs() {
+        totalOs = 0.0;      
         for(ItemProduto produto : produtos){
-            totalProdutos += produto.getSubTotal();
+            totalOs += produto.getSubTotal();
         }
-        return totalProdutos;
+        for(ItemServico servico : servicos){
+            totalOs += servico.getSubTotal();
+        }
+        
+        return totalOs;
     }
 
-    public void settotalProdutos(Double valorTotal) {
-        this.totalProdutos = valorTotal;
+    public void settotalOs(Double valorTotal) {
+        this.totalOs = valorTotal;
     }
     
     
 
     @Override
     public String toString() {
-        return "Os{" + "cliente=" + cliente + "\n dataAbertura=" + dataAbertura + ", dataTermino=" + dataTermino + ", status=" + status + "\n descricao=" + descricao + "\n\n produtos=\n" + produtos + "\n\n servicos=" + servicos + "}\n\n\n sub total: "+ totalProdutos;
+        return "Os{" + "cliente=" + cliente + "\n dataAbertura=" + dataAbertura + ", dataTermino=" + dataTermino + ", status=" + status + "\n descricao=" + descricao + "\n\n produtos=\n" + produtos + "\n\n servicos=" + servicos + "}\n\n\n sub total: "+ totalOs;
     }
     
 

@@ -11,7 +11,7 @@ package br.unipar.eletrofluxo.model;
 public class ItemServico {
     private Servico servico;
     private Integer quantidade;
-//  private Double subTotal; nao seu se realmente precisa
+    private Double subTotal;
 
     public Servico getServico() {
         return servico;
@@ -28,10 +28,14 @@ public class ItemServico {
     public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
     }
+    
+    public Double getSubTotal(){
+        return subTotal = quantidade * servico.getValorServico();
+    }
 
     @Override
     public String toString() {
-        return "Servico{" + "servico=" + servico + ", quantidade=" + quantidade + '}';
+        return "{"+ "servico=" + servico + ", quantidade=" + quantidade + "\n subTotal= "+ subTotal +"}\n";
     }
     
     

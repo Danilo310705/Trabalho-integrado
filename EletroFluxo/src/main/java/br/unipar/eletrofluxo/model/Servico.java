@@ -11,7 +11,7 @@ package br.unipar.eletrofluxo.model;
 public class Servico {
     private String nome;
     private String descricao;
-    private Double valorServic;
+    private Double valorServico;
 
     public String getNome() {
         return nome;
@@ -29,17 +29,17 @@ public class Servico {
         this.descricao = descricao;
     }
 
-    public Double getValorServic() {
-        return valorServic;
+    public Double getValorServico() {
+        return valorServico;
     }
 
-    public void setValorServic(Double valorServic) {
-        this.valorServic = valorServic;
+    public void setValorServico(Double valorServico) {
+        this.valorServico = valorServico;
     }
 
     @Override
     public String toString() {
-        return "Servicos{" + "nome=" + nome + ", descricao=" + descricao + ", valorServic=" + valorServic + '}';
+        return "{" + "nome=" + nome + ", descricao=" + descricao + ", valorServico=" + valorServico + "}";
     }
     
     
