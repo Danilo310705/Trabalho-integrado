@@ -4,6 +4,8 @@
  */
 package br.unipar.eletrofluxo.model;
 
+import br.unipar.eletrofluxo.enums.UnidadeProdutoEnum;
+
 /**
  *
  * @author Usuario
@@ -12,8 +14,7 @@ public class Produto {
     private String nome;
     private Integer quantidade;
     private Double precoUnitario;
-    private String unidade;
-    private String fornecedor;
+    private UnidadeProdutoEnum unidade;
 
     public String getNome() {
         return nome;
@@ -39,25 +40,17 @@ public class Produto {
         this.precoUnitario = precoUnitario;
     }
 
-    public String getUnidade() {
+    public UnidadeProdutoEnum getUnidade() {
         return unidade;
     }
 
-    public void setUnidade(String unidade) {
+    public void setUnidade(UnidadeProdutoEnum unidade) {
         this.unidade = unidade;
-    }
-
-    public String getFornecedor() {
-        return fornecedor;
-    }
-
-    public void setFornecedor(String fornecedor) {
-        this.fornecedor = fornecedor;
     }
 
     @Override
     public String toString() {
-        return "Produtos{" + "nome=" + nome + ", quantidade=" + quantidade + ", precoUnitario=" + precoUnitario + ", unidade=" + unidade + ", fornecedor=" + fornecedor + '}';
+        return "Produtos{" + "nome=" + nome + ", quantidade=" + quantidade + ", precoUnitario=" + precoUnitario + ", unidade=" + unidade + '}';
     }
     
     

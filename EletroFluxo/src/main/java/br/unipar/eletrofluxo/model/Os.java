@@ -21,6 +21,7 @@ public class Os {
     private Date dataTermino;
     private ZonaEnum zona;
     private Double totalOs;
+    private Endereco endereco;
     private ArrayList<ItemProduto> produtos;
     private ArrayList<ItemServico> servicos;
 
@@ -72,6 +73,14 @@ public class Os {
         this.cliente = cliente;
     }
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
     public ArrayList<ItemProduto> getProdutos() {
         return produtos;
     }
@@ -108,15 +117,13 @@ public class Os {
         return totalOs;
     }
 
-    public void settotalOs(Double valorTotal) {
-        this.totalOs = valorTotal;
-    }
+    
     
     
 
     @Override
     public String toString() {
-        return "Os{" + "cliente=" + cliente + "\n dataAbertura=" + dataAbertura + ", dataTermino=" + dataTermino + ", status=" + status + "\n descricao=" + descricao + "\n\n produtos=\n" + produtos + "\n\n servicos=" + servicos + "}\n\n\n sub total: "+ totalOs;
+        return "Os{" + "cliente=" + cliente + "\n dataAbertura=" + dataAbertura + ", dataTermino=" + dataTermino + ", status=" + status + "\n Endereco = "+ endereco +"\n descricao=" + descricao + "\n\n produtos=\n" + produtos + "\n\n servicos=" + servicos + "}\n\n\n sub total: "+ totalOs;
     }
     
 

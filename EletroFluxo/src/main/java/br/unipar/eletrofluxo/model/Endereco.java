@@ -63,5 +63,11 @@ public class Endereco {
     public void setCep(String cep) {
         this.cep = cep;
     }
+
+    @Override
+    public String toString() {
+        return "Endereco{" + "cidade=" + cidade + ", rua=" + rua + ", bairro=" + bairro + ", numero=" + numero + ", cep=" + cep + '}';
+    }
+    
     
 }
