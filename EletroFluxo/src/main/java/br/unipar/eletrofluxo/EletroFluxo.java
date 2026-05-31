@@ -21,6 +21,7 @@ import br.unipar.eletrofluxo.model.Pais;
 import br.unipar.eletrofluxo.model.Servico;
 import br.unipar.eletrofluxo.service.ProdutoService;
 import br.unipar.eletrofluxo.service.ItemProdutoService;
+import br.unipar.eletrofluxo.service.ServicoService;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -200,22 +201,30 @@ public class EletroFluxo {
             
             ProdutoService produtoService = new ProdutoService();
             ItemProdutoService itemProdutoService = new ItemProdutoService();
+            ServicoService servicoService = new ServicoService(); 
             
             Produto teste = new Produto();
             teste.setNome("teste");
             teste.setUnidade(UnidadeProdutoEnum.UN);
             teste.setPrecoUnitario(5.0);
             teste.setQuantidade(500);
-            JOptionPane.showMessageDialog(null, teste);            
             
             ItemProduto teste1 = new ItemProduto();
             teste1.setProduto(teste);
             teste1.setQuantidade(500);
             teste1.getSubTotal();
             
+            Servico teste2 = new Servico();
+            teste2.setDescricao("12345 caracteres");
+            teste2.setNome("Teste2");
+            teste2.setValorServico(0.0);
+            
+            produtoService.validar(teste);
             itemProdutoService.validar(teste1);
-            JOptionPane.showMessageDialog(null, teste1);
-            JOptionPane.showMessageDialog(null, teste);
+            servicoService.validar(teste2);
+            
+            
+            JOptionPane.showMessageDialog(null, teste2);
         
         } catch(ValidacaoNegocioException exception){
             JOptionPane.showMessageDialog(null,"Ocorreu um erro ao executar o sistema: " + exception.getMessage());

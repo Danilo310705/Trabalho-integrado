@@ -10,6 +10,7 @@ br\unipar\eletrofluxo\model\Endereco.class
 br\unipar\eletrofluxo\service\ProdutoService.class
 br\unipar\eletrofluxo\model\ClienteFisico.class
 br\unipar\eletrofluxo\model\Estado.class
+br\unipar\eletrofluxo\service\ServicoService.class
 br\unipar\eletrofluxo\enums\ZonaEnum.class
 br\unipar\eletrofluxo\model\Os.class
 br\unipar\eletrofluxo\model\ClienteJuridico.class
