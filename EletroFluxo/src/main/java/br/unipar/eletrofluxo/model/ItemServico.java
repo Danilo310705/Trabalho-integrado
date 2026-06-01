@@ -10,9 +10,18 @@ package br.unipar.eletrofluxo.model;
  */
 public class ItemServico {
     private Servico servico;
+    private Os os;
     private Integer quantidade;
     private Double subTotal;
 
+    public Os getOs() {
+        return os;
+    }
+
+    public void setOs(Os os) {
+        this.os = os;
+    }
+    
     public Servico getServico() {
         return servico;
     }
@@ -32,6 +41,11 @@ public class ItemServico {
     public Double getSubTotal(){
         return subTotal = quantidade * servico.getValorServico();
     }
+
+    public void setSubTotal(Double subTotal) {
+        this.subTotal = subTotal;
+    }
+    
 
     @Override
     public String toString() {

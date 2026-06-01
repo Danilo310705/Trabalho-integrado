@@ -4,43 +4,132 @@
  */
 package br.unipar.eletrofluxo.service;
 
+import br.unipar.eletrofluxo.exceptions.NaoEncontradoException;
 import br.unipar.eletrofluxo.exceptions.ValidacaoNegocioException;
 import br.unipar.eletrofluxo.model.Servico;
+import br.unipar.eletrofluxo.repository.ServicoRepository;
+import br.unipar.eletrofluxo.repository.interfaces.ServicoRepositoryInterface;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
  * @author Usuario
  */
 public class ServicoService {
-    
-    public void validar(Servico servico) throws ValidacaoNegocioException{
-        if(servico.getNome().isBlank()){
-            throw new ValidacaoNegocioException("O nome do servico não pode ser nulo");
+
+    private ServicoRepositoryInterface servicoRepository;
+
+    public ServicoService() {
+        this.servicoRepository = new ServicoRepository();
+    }
+
+    public Servico inserir(Servico servico) throws ValidacaoNegocioException, SQLException {
+
+        validar(servico);
+
+        return servicoRepository.inserir(servico);
+    }
+
+    public Servico atualizar(Servico servico)throws ValidacaoNegocioException,
+            NaoEncontradoException,
+            SQLException {
+
+        if (servico == null) {
+            throw new ValidacaoNegocioException("Informe o serviço");
         }
-        
-        if(servico.getNome().length()<5){
-            throw new ValidacaoNegocioException("O nome do servico deve te mas que 5 caracteres");
+
+        if (servico.getId() == null) {
+            throw new ValidacaoNegocioException("Informe o ID do serviço");
         }
-        
-        if(servico.getNome().length()>40){
-            throw new ValidacaoNegocioException("O nome do servico deve te menos que 40 caracteres");
+
+        Servico servicoBanco = servicoRepository.findById(servico.getId());
+
+        if (servicoBanco == null) {
+            throw new NaoEncontradoException("Serviço não encontrado");
         }
-        
-        if(servico.getDescricao().isBlank()){
-            throw new ValidacaoNegocioException("A descricao do servico não pode ser nulo");
+
+        validar(servico);
+
+        return servicoRepository.atualizar(servico);
+    }
+
+    public void deletar(Long id) throws ValidacaoNegocioException,
+            NaoEncontradoException,
+            SQLException {
+
+        if (id == null) {
+            throw new ValidacaoNegocioException("Informe o ID do serviço");
         }
-        
-        if(servico.getDescricao().length()<5){
-            throw new ValidacaoNegocioException("A descricao do servico deve te mas que 5 caracteres");
+
+        Servico servico = servicoRepository.findById(id);
+
+        if (servico == null) {
+            throw new NaoEncontradoException("Serviço não encontrado");
         }
-        
-        if(servico.getDescricao().length()>100){
-            throw new ValidacaoNegocioException("A descricao do servico deve te menos que 40 caracteres");
+
+        servicoRepository.deletar(id);
+    }
+
+    public Servico findById(Long id)
+            throws ValidacaoNegocioException,
+            NaoEncontradoException,
+            SQLException {
+
+        if (id == null) {
+            throw new ValidacaoNegocioException("Informe o ID do serviço");
         }
-        
-        if(servico.getValorServico()<=0){
-            throw new ValidacaoNegocioException("O valor do serviço nao pode ser nulo ou negativo");
+
+        Servico servico =servicoRepository.findById(id);
+
+        if (servico == null) {
+            throw new NaoEncontradoException("Serviço não encontrado");
         }
-        
+
+        return servico;
+    }
+
+    public ArrayList<Servico> listarTodos()throws SQLException {
+
+        return servicoRepository.listarTodos();
+    }
+
+    public void validar(Servico servico)
+            throws ValidacaoNegocioException {
+
+        if (servico == null) {
+            throw new ValidacaoNegocioException("Informe o serviço");
+        }
+
+        if (servico.getNome() == null
+                || servico.getNome().isBlank()) {
+            throw new ValidacaoNegocioException("O nome do serviço não pode ser nulo");
+        }
+
+        if (servico.getNome().length() < 5) {
+            throw new ValidacaoNegocioException("O nome do serviço deve ter mais que 5 caracteres");
+        }
+
+        if (servico.getNome().length() > 40) {
+            throw new ValidacaoNegocioException("O nome do serviço deve ter menos que 40 caracteres");
+        }
+
+        if (servico.getDescricao() == null
+                || servico.getDescricao().isBlank()) {
+            throw new ValidacaoNegocioException("A descrição do serviço não pode ser nula");
+        }
+
+        if (servico.getDescricao().length() < 5) {
+            throw new ValidacaoNegocioException("A descrição do serviço deve ter mais que 5 caracteres");
+        }
+
+        if (servico.getDescricao().length() > 100) {
+            throw new ValidacaoNegocioException("A descrição do serviço deve ter menos que 100 caracteres");
+        }
+
+        if (servico.getValorServico() == null
+                || servico.getValorServico() <= 0) {
+            throw new ValidacaoNegocioException("O valor do serviço não pode ser nulo ou negativo");
+        }
     }
 }

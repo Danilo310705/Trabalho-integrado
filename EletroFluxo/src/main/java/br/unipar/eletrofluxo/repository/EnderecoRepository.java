@@ -52,9 +52,7 @@ public class EnderecoRepository implements EnderecoRepositoryInterface{
 
             conn = new ConnectionFactory().getConnection();
 
-            pstm = conn.prepareStatement(
-                    INSERT,
-                    Statement.RETURN_GENERATED_KEYS);
+            pstm = conn.prepareStatement(INSERT,Statement.RETURN_GENERATED_KEYS);
 
             pstm.setString(1, endereco.getRua());
             pstm.setString(2, endereco.getBairro());

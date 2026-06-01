@@ -10,7 +10,6 @@ package br.unipar.eletrofluxo.model;
  */
 public class Pais {
     private Long id;
-
     private String pais;
     private String sigla;
     

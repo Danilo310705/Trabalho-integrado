@@ -113,7 +113,7 @@ public class Os {
         servicos.add(servico);
     }
 
-    public Double gettotalOs() {
+    public Double getTotalOs() {
         totalOs = 0.0;      
         for(ItemProduto produto : produtos){
             totalOs += produto.getSubTotal();
@@ -124,6 +124,11 @@ public class Os {
         
         return totalOs;
     }
+
+    public void setTotalOs(Double totalOs) {
+        this.totalOs = totalOs;
+    }
+    
 
     
     

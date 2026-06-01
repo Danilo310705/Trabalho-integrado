@@ -10,8 +10,16 @@ package br.unipar.eletrofluxo.model;
  */
 public class ItemProduto {
     private Produto produto;
+    private Os os;
     private Integer quantidade;
     
+    public Os getOs() {
+        return os;
+    }
+
+    public void setOs(Os os) {
+        this.os = os;
+    }
     
     public Produto getProduto() {
         return produto;

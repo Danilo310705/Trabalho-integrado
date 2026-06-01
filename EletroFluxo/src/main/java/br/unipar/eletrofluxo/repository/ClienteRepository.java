@@ -49,8 +49,7 @@ public class ClienteRepository implements ClienteRepositoryInterface{
 
             conn = new ConnectionFactory().getConnection();
 
-            pstm = conn.prepareStatement(
-                    INSERT,Statement.RETURN_GENERATED_KEYS);
+            pstm = conn.prepareStatement(INSERT,Statement.RETURN_GENERATED_KEYS);
 
             String documento;
 
@@ -263,9 +262,7 @@ public class ClienteRepository implements ClienteRepositoryInterface{
                 cliente.setObservacoes(rs.getString("obs"));
                 cliente.setTelefone(rs.getString("telefone"));
                 cliente.setEmail(rs.getString("email"));
-                cliente.setStatus(
-                        StatusClienteEnum.valueOf(
-                                rs.getString("status")));
+                cliente.setStatus(StatusClienteEnum.valueOf(rs.getString("status")));
 
                 listaClientes.add(cliente);
 

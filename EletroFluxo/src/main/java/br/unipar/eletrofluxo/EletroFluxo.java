@@ -199,7 +199,7 @@ public class EletroFluxo {
             Os1.setEndereco(endereco1Cliente2);
             Os1.setProdutos(produtosOs1);
             Os1.setServicos(servicosOs1);
-            Os1.gettotalOs();
+            Os1.getTotalOs();
             
             ProdutoService produtoService = new ProdutoService();
             ItemProdutoService itemProdutoService = new ItemProdutoService();
@@ -239,16 +239,16 @@ public class EletroFluxo {
             //produtoRepository.inserir(clipe);
             //produtoRepository.deletar(3L);
             //Produto p = produtoRepository.findById(4L);
-            Produto produto = produtoRepository.findById(4L);
-            produto.setQuantidade(999);
+            //Produto produto = produtoRepository.findById(4L);
+            //produto.setQuantidade(999);
             
-            JOptionPane.showMessageDialog(null, produto);
+            //JOptionPane.showMessageDialog(null, produto);
         
         } catch(ValidacaoNegocioException exception){
             JOptionPane.showMessageDialog(null,"Ocorreu um erro ao executar o sistema: " + exception.getMessage());
-        }catch(SQLException e){
+        }/*catch(SQLException e){
             JOptionPane.showMessageDialog(null,"Erro de banco: " + e.getMessage());
-        }finally {
+        }*/finally {
             JOptionPane.showMessageDialog(null, "encerrando cessao");
         }
     }
@@ -308,7 +308,7 @@ public class EletroFluxo {
             teste8.setZona(ZonaEnum.Urbana);
             teste8.setProdutos(teste6);
             teste8.setServicos(teste7);
-            teste8.gettotalOs();
+            teste8.getTotalOs();
             
 
             produtoService.validar(teste);            
