@@ -11,7 +11,7 @@ import br.unipar.eletrofluxo.model.ClienteJuridico;
  *
  * @author Usuario
  */
-public class ClienteJuridicoService extends ClienteService{
+public class ClienteJuridicoService {
     public void validar(ClienteJuridico clienteJuridico) throws ValidacaoNegocioException{
         if(clienteJuridico.getCnpj()== null || clienteJuridico.getCnpj().isBlank()){
             throw new ValidacaoNegocioException("O cnpj é obrigatorio");
