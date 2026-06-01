@@ -16,7 +16,7 @@ import java.util.ArrayList;
  *
  * @author Usuario
  */
- class ProdutoService {
+public class ProdutoService {
 
     private ProdutoRepositoryInterface produtoRepository;
 

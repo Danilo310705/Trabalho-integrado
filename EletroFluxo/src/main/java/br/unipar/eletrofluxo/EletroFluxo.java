@@ -24,10 +24,10 @@ import br.unipar.eletrofluxo.repository.ProdutoRepository;
 import br.unipar.eletrofluxo.service.ClienteFisicoService;
 import br.unipar.eletrofluxo.service.ClienteJuridicoService;
 import br.unipar.eletrofluxo.service.ClienteService;
-import br.unipar.eletrofluxo.service.ProdutoService;
 import br.unipar.eletrofluxo.service.ItemProdutoService;
 import br.unipar.eletrofluxo.service.ItemServicoService;
 import br.unipar.eletrofluxo.service.OsService;
+import br.unipar.eletrofluxo.service.ProdutoService;
 import br.unipar.eletrofluxo.service.ServicoService;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -202,53 +202,29 @@ public class EletroFluxo {
             Os1.getTotalOs();
             
             ProdutoService produtoService = new ProdutoService();
-            ItemProdutoService itemProdutoService = new ItemProdutoService();
-            ServicoService servicoService = new ServicoService(); 
-            ItemServicoService itemServicoService = new ItemServicoService();
-            ClienteService clienteService = new ClienteService();
-            ClienteFisicoService clienteFisicoService = new ClienteFisicoService();
-            ClienteJuridicoService clienteJuridicoService = new ClienteJuridicoService();
-            OsService osService = new OsService();
+
+            produtoService.inserir(parafuso);
+            produtoService.inserir(porca);
+            produtoService.inserir(fio);
+            produtoService.inserir(clipe);
             
-            produtoService.validar(parafuso);
-            produtoService.validar(porca);
-            produtoService.validar(fio);
-            produtoService.validar(clipe);
-
-            itemProdutoService.validar(parafusoOs1);
-            itemProdutoService.validar(porcaOs1);
-            itemProdutoService.validar(fioOs1);
-            itemProdutoService.validar(clipeOs1);
-
-            servicoService.validar(subfio);
-            servicoService.validar(trocaDeDifusor);
-
-            itemServicoService.validar(subfioOs1);
-            itemServicoService.validar(trocaDeDifusorOs1);
-
-            clienteService.validar(cliente1);
-            clienteFisicoService.validar(cliente1);
-
-            clienteService.validar(cliente2);
-            clienteJuridicoService.validar(cliente2);
-
-            osService.validar(Os1);
-
-
-            ProdutoRepository produtoRepository = new ProdutoRepository();
-            //produtoRepository.inserir(clipe);
-            //produtoRepository.deletar(3L);
-            //Produto p = produtoRepository.findById(4L);
-            //Produto produto = produtoRepository.findById(4L);
-            //produto.setQuantidade(999);
+            System.out.println(parafuso);
+            Produto produtoRetorno = produtoService.findById(1L);
+            produtoRetorno.setQuantidade(999);
+            produtoService.atualizar(produtoRetorno);
             
-            //JOptionPane.showMessageDialog(null, produto);
-        
+            ArrayList<Produto> listaProdutos = produtoService.listarTodos();
+            System.out.println(listaProdutos);
+            
+            
+            
         } catch(ValidacaoNegocioException exception){
             JOptionPane.showMessageDialog(null,"Ocorreu um erro ao executar o sistema: " + exception.getMessage());
-        }/*catch(SQLException e){
+        }catch(SQLException e){
             JOptionPane.showMessageDialog(null,"Erro de banco: " + e.getMessage());
-        }*/finally {
+        } catch(Exception exception) {
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro ao executar o sistema:"+exception.getMessage());
+        }finally {
             JOptionPane.showMessageDialog(null, "encerrando cessao");
         }
     }
