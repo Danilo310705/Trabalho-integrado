@@ -20,9 +20,11 @@ import br.unipar.eletrofluxo.model.ItemProduto;
 import br.unipar.eletrofluxo.model.ItemServico;
 import br.unipar.eletrofluxo.model.Pais;
 import br.unipar.eletrofluxo.model.Servico;
-import br.unipar.eletrofluxo.repository.ProdutoRepository;
-import br.unipar.eletrofluxo.service.ClienteFisicoService;
-import br.unipar.eletrofluxo.service.ClienteJuridicoService;
+import br.unipar.eletrofluxo.repository.CidadeRepository;
+import br.unipar.eletrofluxo.repository.ClienteRepository;
+import br.unipar.eletrofluxo.repository.EnderecoRepository;
+import br.unipar.eletrofluxo.repository.EstadoRepository;
+import br.unipar.eletrofluxo.repository.PaisRepository;
 import br.unipar.eletrofluxo.service.ClienteService;
 import br.unipar.eletrofluxo.service.ItemProdutoService;
 import br.unipar.eletrofluxo.service.ItemServicoService;
@@ -217,6 +219,77 @@ public class EletroFluxo {
             System.out.println(listaProdutos);
             
             
+            ServicoService servicoService = new ServicoService();
+
+            servicoService.inserir(subfio);
+            servicoService.inserir(trocaDeDifusor);            
+
+            System.out.println(subfio);
+
+            Servico servicoRetorno = servicoService.findById(1L);
+            servicoRetorno.setValorServico(1500.0);
+            servicoService.atualizar(servicoRetorno);
+            
+            ArrayList<Servico> listaServicos =servicoService.listarTodos();
+            System.out.println(listaServicos);            
+            
+            PaisRepository paisRepository = new PaisRepository();
+            paisRepository.inserir(brasil);
+
+            EstadoRepository estadoRepository = new EstadoRepository();
+            estadoRepository.inserir(parana);
+
+            CidadeRepository cidadeRepository = new CidadeRepository();
+            cidadeRepository.inserir(toledo);
+
+            EnderecoRepository enderecoRepository = new EnderecoRepository();
+            enderecoRepository.inserir(endereco1Cliente1);
+            enderecoRepository.inserir(endereco1Cliente2);
+            enderecoRepository.inserir(endereco2Cliente1);
+            
+            ClienteRepository clienteRepository = new ClienteRepository();
+            clienteRepository.inserir(cliente1);
+            clienteRepository.inserir(cliente2);
+            
+            OsService osService = new OsService();
+
+            osService.inserir(Os1);
+            System.out.println(Os1);
+
+            Os osRetorno =osService.findById(1L);
+            osRetorno.setDescricao("Descrição alterada");
+            osService.atualizar(osRetorno);
+ 
+            ArrayList<Os> listaOs =osService.listarTodos();
+            System.out.println(listaOs);
+            
+            ItemProdutoService itemProdutoService = new ItemProdutoService();
+
+            itemProdutoService.inserir(parafusoOs1);
+            itemProdutoService.inserir(porcaOs1);
+            itemProdutoService.inserir(fioOs1);
+            itemProdutoService.inserir(clipeOs1);
+
+            System.out.println(parafusoOs1);
+            
+            ItemProduto itemRetorno = itemProdutoService.findById(parafuso.getId(),Os1.getId());
+            itemRetorno.setQuantidade(20);
+            itemProdutoService.atualizar(itemRetorno);
+            
+            ArrayList<ItemProduto> listaItens = itemProdutoService.listarTodos();
+            System.out.println(listaItens);
+            
+            ItemServicoService itemServicoService = new ItemServicoService();
+
+            itemServicoService.inserir(subfioOs1);            
+            itemServicoService.inserir(trocaDeDifusorOs1);            
+            
+            ItemServico itemServicoRetorno = itemServicoService.findById( subfio.getId(),Os1.getId());
+            itemServicoRetorno.setQuantidade(3);
+            itemServicoService.atualizar(itemServicoRetorno);
+            
+            ArrayList<ItemServico> listaItensServico = itemServicoService.listarTodos();
+            System.out.println(listaItensServico);
             
         } catch(ValidacaoNegocioException exception){
             JOptionPane.showMessageDialog(null,"Ocorreu um erro ao executar o sistema: " + exception.getMessage());
