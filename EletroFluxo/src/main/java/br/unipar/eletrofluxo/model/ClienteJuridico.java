@@ -9,16 +9,7 @@ package br.unipar.eletrofluxo.model;
  * @author Usuario
  */
 public class ClienteJuridico extends Cliente{
-    private String nomeFantasia;
     private String cnpj;
-
-    public String getNomeFantasia() {
-        return nomeFantasia;
-    }
-
-    public void setNomeFantasia(String nomeFantasia) {
-        this.nomeFantasia = nomeFantasia;
-    }
 
     public String getCnpj() {
         return cnpj;
@@ -28,6 +19,9 @@ public class ClienteJuridico extends Cliente{
         this.cnpj = cnpj;
     }
 
-    
-    
+    @Override
+    public String toString() {
+        return "ClienteJuridico{" + "cnpj=" + cnpj + '}';
+    }
+
 }

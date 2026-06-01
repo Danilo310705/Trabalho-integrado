@@ -9,8 +9,18 @@ package br.unipar.eletrofluxo.model;
  * @author Usuario
  */
 public class Pais {
+    private Long id;
+
     private String pais;
     private String sigla;
+    
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getPais() {
         return pais;

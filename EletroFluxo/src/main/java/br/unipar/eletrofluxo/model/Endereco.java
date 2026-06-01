@@ -9,12 +9,21 @@ package br.unipar.eletrofluxo.model;
  * @author Usuario
  */
 public class Endereco {
+    private Long id;
     private Cidade cidade;
     private Cliente cliente;
     private String rua;
     private String bairro;
     private Integer numero;
     private String cep;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Cidade getCidade() {
         return cidade;

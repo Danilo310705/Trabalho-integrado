@@ -11,11 +11,20 @@ import br.unipar.eletrofluxo.enums.UnidadeProdutoEnum;
  * @author Usuario
  */
 public class Produto {
+    private Long id;
     private String nome;
     private Integer quantidade;
     private Double precoUnitario;
     private UnidadeProdutoEnum unidade;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -50,7 +59,7 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Produtos{" + "nome=" + nome + ", quantidade=" + quantidade + ", precoUnitario=" + precoUnitario + ", unidade=" + unidade + '}';
+        return "Produtos{" +"id="+id+ "nome=" + nome + ", quantidade=" + quantidade + ", precoUnitario=" + precoUnitario + ", unidade=" + unidade + '}';
     }
     
     

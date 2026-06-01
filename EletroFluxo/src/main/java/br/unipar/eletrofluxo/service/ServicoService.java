@@ -39,7 +39,7 @@ public class ServicoService {
         }
         
         if(servico.getValorServico()<=0){
-            throw new ValidacaoNegocioException("O valor do serviço nao pode ser 0 ou negativo");
+            throw new ValidacaoNegocioException("O valor do serviço nao pode ser nulo ou negativo");
         }
         
     }

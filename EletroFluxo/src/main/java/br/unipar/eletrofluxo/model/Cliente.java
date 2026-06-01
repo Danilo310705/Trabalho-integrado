@@ -11,11 +11,20 @@ import br.unipar.eletrofluxo.enums.StatusClienteEnum;
  * @author Usuario
  */
 public abstract class Cliente {
+    private Long id;
     private String nome;
     private String observacoes;
     private String telefone;
     private String email;
     private StatusClienteEnum status;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -53,7 +62,7 @@ public abstract class Cliente {
         return status;
     }
 
-    public void setStatus(StatusClienteEnum statu) {
+    public void setStatus(StatusClienteEnum status) {
         this.status = status;
     }
 

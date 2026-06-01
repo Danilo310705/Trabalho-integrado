@@ -14,7 +14,7 @@ import br.unipar.eletrofluxo.model.Produto;
 public class ProdutoService {
     
     public void validar(Produto produto) throws ValidacaoNegocioException{
-        if(produto.getNome().isBlank()){
+        if(produto.getNome() == null || produto.getNome().isBlank()){
             throw new ValidacaoNegocioException("Informe o nome do produto");
         }
         

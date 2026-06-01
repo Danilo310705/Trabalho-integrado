@@ -14,6 +14,7 @@ import java.util.Date;
  * @author Usuario
  */
 public class Os {
+    private Long id;
     private Cliente cliente;
     private String descricao;
     private StatusOsEnum status;    
@@ -25,6 +26,13 @@ public class Os {
     private ArrayList<ItemProduto> produtos;
     private ArrayList<ItemServico> servicos;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
     public String getDescricao() {
         return descricao;
     }

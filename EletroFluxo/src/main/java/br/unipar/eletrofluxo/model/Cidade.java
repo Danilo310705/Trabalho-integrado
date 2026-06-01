@@ -9,8 +9,17 @@ package br.unipar.eletrofluxo.model;
  * @author Usuario
  */
 public class Cidade {
+    private Long id;
     private Estado estado;
     private String cidade;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Estado getEstado() {
         return estado;
