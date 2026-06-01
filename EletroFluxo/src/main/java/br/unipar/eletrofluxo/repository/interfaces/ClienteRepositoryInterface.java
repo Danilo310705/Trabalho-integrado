@@ -4,7 +4,7 @@
  */
 package br.unipar.eletrofluxo.repository.interfaces;
 
-import br.unipar.eletrofluxo.model.Cidade;
+import br.unipar.eletrofluxo.model.Cliente;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -12,16 +12,16 @@ import java.util.ArrayList;
  *
  * @author Usuario
  */
-public interface CidadeRepositoryInterface {
+public interface ClienteRepositoryInterface {
 
-    public Cidade inserir(Cidade cidade) throws SQLException;
+    public Cliente inserir(Cliente cliente) throws SQLException;
 
-    public Cidade atualizar(Cidade cidade) throws SQLException;
+    public Cliente atualizar(Cliente cliente) throws SQLException;
 
     public void deletar(Long id) throws SQLException;
 
-    public Cidade findById(Long id) throws SQLException;
+    public Cliente findById(Long id) throws SQLException;
 
-    public ArrayList<Cidade> listarTodos() throws SQLException;
+    public ArrayList<Cliente> listarTodos() throws SQLException;
 
 }

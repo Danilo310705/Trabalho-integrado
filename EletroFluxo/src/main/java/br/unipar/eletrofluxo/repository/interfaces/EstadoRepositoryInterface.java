@@ -14,14 +14,14 @@ import java.util.ArrayList;
  */
 public interface EstadoRepositoryInterface {
 
-    Estado inserir(Estado estado) throws SQLException;
+    public Estado inserir(Estado estado) throws SQLException;
 
-    Estado atualizar(Estado estado) throws SQLException;
+    public Estado atualizar(Estado estado) throws SQLException;
 
-    void deletar(Long id) throws SQLException;
+    public void deletar(Long id) throws SQLException;
 
-    Estado findById(Long id) throws SQLException;
+    public Estado findById(Long id) throws SQLException;
 
-    ArrayList<Estado> listarTodos() throws SQLException;
+    public ArrayList<Estado> listarTodos() throws SQLException;
 
 }

@@ -6,6 +6,7 @@ package br.unipar.eletrofluxo.repository;
 
 import br.unipar.eletrofluxo.infraestructure.ConnectionFactory;
 import br.unipar.eletrofluxo.model.Pais;
+import br.unipar.eletrofluxo.repository.interfaces.PaisRepositoryInterface;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
  *
  * @author Usuario
  */
-public class PaisRepository {
+public class PaisRepository implements PaisRepositoryInterface{
     private static final String INSERT =
         "INSERT INTO pais (pais, sigla) VALUES (?, ?)";
 
@@ -43,9 +44,7 @@ public class PaisRepository {
 
             conn = new ConnectionFactory().getConnection();
 
-            pstm = conn.prepareStatement(
-                    INSERT,
-                    Statement.RETURN_GENERATED_KEYS);
+            pstm = conn.prepareStatement(INSERT,Statement.RETURN_GENERATED_KEYS);
 
             pstm.setString(1, pais.getPais());
             pstm.setString(2, pais.getSigla());

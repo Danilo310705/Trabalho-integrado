@@ -14,13 +14,13 @@ import java.util.ArrayList;
  */
 public interface ProdutoRepositoryInterface {
 
-    Produto inserir(Produto produto) throws SQLException;
+    public Produto inserir(Produto produto) throws SQLException;
 
-    Produto atualizar(Produto produto) throws SQLException;
+    public Produto atualizar(Produto produto) throws SQLException;
 
-    void deletar(Long id) throws SQLException;
+    public void deletar(Long id) throws SQLException;
 
-    Produto findById(Long id) throws SQLException;
+    public Produto findById(Long id) throws SQLException;
 
-    ArrayList<Produto> listarTodos() throws SQLException;
+    public ArrayList<Produto> listarTodos() throws SQLException;
 }

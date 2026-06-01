@@ -19,25 +19,23 @@ import java.util.ArrayList;
 public class ProdutoRepository implements ProdutoRepositoryInterface{
 
     private static final String INSERT =
-            "INSERT INTO produto "
-            + "(nome, quant, preco_unitario, unidade) "
-            + "VALUES (?, ?, ?, ?)";
+        "INSERT INTO produto (nome, quant, preco_unitario, unidade) "
+        + "VALUES (?, ?, ?, ?)";
 
     private static final String UPDATE =
-            "UPDATE produto "
-            + "SET nome = ?, quant = ?, preco_unitario = ?, unidade = ? "
-            + "WHERE id = ?";
+        "UPDATE produto SET nome = ?, quant = ?, preco_unitario = ?, unidade = ? "
+        + "WHERE id = ?";
 
     private static final String DELETE =
-            "DELETE FROM produto WHERE id = ?";
+        "DELETE FROM produto WHERE id = ?";
 
     private static final String FIND_BY_ID =
-            "SELECT id, nome, quant, preco_unitario, unidade "
-            + "FROM produto WHERE id = ?";
+        "SELECT id, nome, quant, preco_unitario, unidade "
+        + "FROM produto WHERE id = ?";
 
     private static final String FIND_ALL =
-            "SELECT id, nome, quant, preco_unitario, unidade "
-            + "FROM produto ORDER BY nome";
+        "SELECT id, nome, quant, preco_unitario, unidade "
+        + "FROM produto ORDER BY nome";
 
     public Produto inserir(Produto produto) throws SQLException {
 
@@ -49,9 +47,7 @@ public class ProdutoRepository implements ProdutoRepositoryInterface{
 
             conn = new ConnectionFactory().getConnection();
 
-            pstm = conn.prepareStatement(
-                    INSERT,
-                    Statement.RETURN_GENERATED_KEYS);
+            pstm = conn.prepareStatement(INSERT,Statement.RETURN_GENERATED_KEYS);
 
             pstm.setString(1, produto.getNome());
             pstm.setInt(2, produto.getQuantidade());

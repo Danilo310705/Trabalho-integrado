@@ -4,24 +4,20 @@
  */
 package br.unipar.eletrofluxo.repository.interfaces;
 
-import br.unipar.eletrofluxo.model.Cidade;
+import br.unipar.eletrofluxo.model.Os;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- *
- * @author Usuario
- */
-public interface CidadeRepositoryInterface {
+public interface OsRepositoryInterface {
 
-    public Cidade inserir(Cidade cidade) throws SQLException;
+    public Os inserir(Os os) throws SQLException;
 
-    public Cidade atualizar(Cidade cidade) throws SQLException;
+    public Os atualizar(Os os) throws SQLException;
 
     public void deletar(Long id) throws SQLException;
 
-    public Cidade findById(Long id) throws SQLException;
+    public Os findById(Long id) throws SQLException;
 
-    public ArrayList<Cidade> listarTodos() throws SQLException;
+    public ArrayList<Os> listarTodos() throws SQLException;
 
 }

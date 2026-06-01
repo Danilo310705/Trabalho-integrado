@@ -7,6 +7,7 @@ package br.unipar.eletrofluxo.repository;
 import br.unipar.eletrofluxo.infraestructure.ConnectionFactory;
 import br.unipar.eletrofluxo.model.Cidade;
 import br.unipar.eletrofluxo.model.Estado;
+import br.unipar.eletrofluxo.repository.interfaces.CidadeRepositoryInterface;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
  *
  * @author Usuario
  */
-public class CidadeRepository {
+public class CidadeRepository implements CidadeRepositoryInterface{
     private static final String INSERT =
         "INSERT INTO cidade (cidade, id_estado) VALUES (?, ?);";
 
